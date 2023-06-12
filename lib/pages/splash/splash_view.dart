@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../constants/asset.dart';
+import '../../constants/assets.dart';
 import '../../constants/font_color.dart';
 import '../../items/background_image/bg_image2.dart';
 import '../login_page/login_view.dart';
@@ -39,7 +39,7 @@ class _SplashState extends State<Splash> {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 scale: 1.6,
-                image: AssetImage(Asset.titleImage),
+                image: AssetImage(Assets.titleImage),
               ),
             ),
           ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_todo_scream/constants/font_color.dart';
 
-import '../../constants/asset.dart';
+import '../../constants/assets.dart';
 import '../../items/background_image/bg_image2.dart';
 import '../../items/login/login_input_text_field.dart';
 
@@ -19,7 +19,21 @@ class _LoginPageState extends State<LoginPage> {
 
   checkInput() {
     setState(() {
-      isBtnEnable = emailInput.isNotEmpty && pwInput.isNotEmpty ? true : false;
+      isBtnEnable = emailInput.isNotEmpty && pwInput.isNotEmpty;
+    });
+  }
+
+  handleCheckEmailChange(String text) {
+    setState(() {
+      emailInput = text;
+      checkInput();
+    });
+  }
+
+  handleCheckPasswordChange(String text) {
+    setState(() {
+      pwInput = text;
+      checkInput();
     });
   }
 
@@ -40,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: 240,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage(Asset.welcomeTitleImage),
+                          image: AssetImage(Assets.welcomeTitleImage),
                         ),
                       ),
                     ),
@@ -49,12 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                         LoginInputTextField(
                           hintText: "이메일",
                           obscureText: false,
-                          onChanged: (text) {
-                            setState(() {
-                              emailInput = text;
-                              checkInput();
-                            });
-                          },
+                          onChanged: handleCheckEmailChange,
                         ),
                         const SizedBox(
                           height: 24,
@@ -62,13 +71,8 @@ class _LoginPageState extends State<LoginPage> {
                         LoginInputTextField(
                           hintText: "비밀번호",
                           obscureText: true,
-                          onChanged: (text) {
-                            setState(() {
-                              pwInput = text;
-                              checkInput();
-                            });
-                          },
-                        )
+                          onChanged: handleCheckPasswordChange,
+                        ),
                       ],
                     ),
                     const SizedBox(
