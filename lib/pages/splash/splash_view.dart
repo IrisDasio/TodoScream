@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_todo_scream/constants/custom_colors.dart';
 import '../../constants/assets.dart';
-import '../../constants/font_color.dart';
-import '../../items/background_image/bg_image2.dart';
 import '../login_page/login_view.dart';
 
 class Splash extends StatefulWidget {
@@ -34,7 +33,14 @@ class _SplashState extends State<Splash> {
     return Scaffold(
       body: Stack(
         children: [
-          const BackgroundImage2(),
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage(Assets.splashBgImage),
+              ),
+            ),
+          ),
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -51,7 +57,7 @@ class _SplashState extends State<Splash> {
                 child: Text(
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: FontColor.defaultColor,
+                    color: CustomColors.defaultColor,
                     fontSize: 16.0,
                   ),
                   "일상속 달콤한 선물",

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/font_color.dart';
+import '../../constants/custom_colors.dart';
 
 class LoginInputTextField extends StatelessWidget {
   final String hintText;
@@ -20,11 +20,11 @@ class LoginInputTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: const TextStyle(
-          color: FontColor.defaultColor,
+          color: CustomColors.defaultColor,
         ),
         enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: FontColor.defaultColor,
+            color: CustomColors.defaultColor,
           ),
           borderRadius: BorderRadius.all(
             Radius.circular(12),
@@ -32,7 +32,7 @@ class LoginInputTextField extends StatelessWidget {
         ),
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: FontColor.defaultColor,
+            color: CustomColors.defaultColor,
           ),
           borderRadius: BorderRadius.all(
             Radius.circular(
