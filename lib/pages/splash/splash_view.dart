@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../css/asset.dart';
-import '../../css/font_color.dart';
+import '../../constants/asset.dart';
+import '../../constants/font_color.dart';
 import '../../items/background_image/bg_image2.dart';
 import '../login_page/login_view.dart';
 

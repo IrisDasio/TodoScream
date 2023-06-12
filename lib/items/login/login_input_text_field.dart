@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../css/font_color.dart';
+import '../../constants/font_color.dart';
 
 class LoginInputTextField extends StatelessWidget {
   final String hintText;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_todo_scream/css/font_color.dart';
+import 'package:flutter_application_todo_scream/constants/font_color.dart';
 
-import '../../css/asset.dart';
+import '../../constants/asset.dart';
 import '../../items/background_image/bg_image2.dart';
 import '../../items/login/login_input_text_field.dart';
 
