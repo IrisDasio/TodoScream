@@ -89,7 +89,8 @@ class _LoginPageState extends State<LoginPage> {
                       child: ElevatedButton(
                         onPressed: isBtnEnable == true ? () {} : null,
                         style: ElevatedButton.styleFrom(
-                          disabledBackgroundColor: CustomColors.disableColor,
+                          disabledBackgroundColor:
+                              CustomColors.disableContainerColor,
                           backgroundColor: CustomColors.subColor,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 36,
@@ -138,4 +139,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
