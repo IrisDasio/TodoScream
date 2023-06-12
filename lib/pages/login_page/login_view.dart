@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_todo_scream/common/components/background_img.dart';
 import 'package:flutter_application_todo_scream/common/components/input_text_field.dart';
 import 'package:flutter_application_todo_scream/constants/custom_colors.dart';
 
@@ -41,14 +42,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(Assets.loginBgImage),
-              ),
-            ),
-          ),
+          const BackgroundImage(),
           Center(
             child: SingleChildScrollView(
               child: Padding(
