@@ -18,7 +18,7 @@ class _SplashState extends State<Splash> {
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => const LoginPage(),
@@ -55,12 +55,12 @@ class _SplashState extends State<Splash> {
               height: 80,
               child: Center(
                 child: Text(
+                  "일상속 달콤한 선물",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: CustomColors.defaultColor,
                     fontSize: 16.0,
                   ),
-                  "일상속 달콤한 선물",
                 ),
               ),
             ),
