@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_todo_scream/common/components/background_img.dart';
+import 'package:flutter_application_todo_scream/common/components/custom_elevated_button.dart';
 import 'package:flutter_application_todo_scream/common/components/loging_signup_text_form_field.dart';
 import 'package:flutter_application_todo_scream/common/components/page_change_button.dart';
 import 'package:flutter_application_todo_scream/constants/custom_colors.dart';
@@ -89,27 +90,10 @@ class _LoginPageState extends State<LoginPage> {
                             obscureText: true,
                             onChanged: handleCheckPasswordChange,
                           ),
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              onPressed: isBtnEnable == true ? () {} : null,
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: CustomColors.subColor,
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 36,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(
-                                    32,
-                                  ),
-                                ),
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.symmetric(vertical: 12),
-                                child: Text("로그인"),
-                              ),
-                            ),
-                          ),
+                          CustomElevatedButton(
+                            onPressed: isBtnEnable ? () {} : null,
+                            text: "로그인",
+                          )
                         ],
                       ),
                     ],

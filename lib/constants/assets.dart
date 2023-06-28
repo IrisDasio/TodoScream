@@ -4,4 +4,5 @@ class Assets {
   static const String bgImage = 'assets/img/bg_container.png';
   static const String welcomeTitleImage = 'assets/img/welcome_back.png';
   static const String createAccountImage = 'assets/img/Create_Account.png';
+  static const String serviceTermsImage = 'assets/img/Service_Terms.png';
 }

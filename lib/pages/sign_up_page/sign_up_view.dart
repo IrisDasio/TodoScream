@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_todo_scream/common/components/background_img.dart';
+import 'package:flutter_application_todo_scream/common/components/custom_elevated_button.dart';
 import 'package:flutter_application_todo_scream/common/components/loging_signup_text_form_field.dart';
 import 'package:flutter_application_todo_scream/common/components/page_change_button.dart';
 import 'package:flutter_application_todo_scream/constants/assets.dart';
@@ -50,10 +51,9 @@ class _SignUpPageState extends State<SignUpPage> {
     if (emailInput.isEmpty) {
       return null;
     }
-    {
-      if (!emailRegExp.hasMatch(emailInput)) {
-        return "올바른 이메일 양식이 아닙니다.";
-      }
+
+    if (!emailRegExp.hasMatch(emailInput)) {
+      return "올바른 이메일 양식이 아닙니다.";
     }
 
     return null;
@@ -64,11 +64,11 @@ class _SignUpPageState extends State<SignUpPage> {
     if (pwInput.isEmpty) {
       return null;
     }
-    {
-      if (!isPwValid) {
-        return "비밀번호는 8자 이상, 20자 미만으로 해주세요.";
-      }
+
+    if (!isPwValid) {
+      return "비밀번호는 8자 이상, 20자 미만으로 해주세요.";
     }
+
     return null;
   }
 
@@ -76,11 +76,11 @@ class _SignUpPageState extends State<SignUpPage> {
     if (pwInput.isEmpty) {
       return null;
     }
-    {
-      if (pwInput != rePwInput) {
-        return "비밀번호와 일치하지 않습니다.";
-      }
+
+    if (pwInput != rePwInput) {
+      return "비밀번호와 일치하지 않습니다.";
     }
+
     return null;
   }
 
@@ -148,29 +148,15 @@ class _SignUpPageState extends State<SignUpPage> {
                           onChanged: handleCheckReconfirmPasswordChange,
                           validator: validateReconfirmPw,
                         ),
-                        SizedBox(
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            onPressed: isBtnEnable == true
-                                ? handlePageChangeTerms
-                                : null,
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: CustomColors.subColor,
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 36,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                  32,
-                                ),
-                              ),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 12),
-                              child: Text("다음 단계로"),
-                            ),
-                          ),
+                        const SizedBox(
+                          height: 20,
                         ),
+                        CustomElevatedButton(
+                          onPressed: isBtnEnable == true
+                              ? handlePageChangeTerms
+                              : null,
+                          text: "다음 단계로",
+                        )
                       ],
                     ),
                   ),
