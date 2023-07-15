@@ -8,4 +8,5 @@ class CustomColors {
   static const Color subColor = Color(0xFF9B4055);
   static const Color lightPinkColor = Color(0xFFD6C2C4);
   static const Color textDefaultColor = Color(0XFF524345);
+  static const Color navigationBarColor = Color(0XFFF8EBEB);
 }

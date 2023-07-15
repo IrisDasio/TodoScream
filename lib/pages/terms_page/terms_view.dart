@@ -16,7 +16,7 @@ class TermsPage extends StatefulWidget {
 }
 
 class _TermsPageState extends State<TermsPage> {
-  List<bool> isCheckedTermId = List.generate(TermList.length, (index) => false);
+  List<bool> isCheckedTermId = List.generate(termList.length, (index) => false);
   bool isAllChecked = false;
   List requiredTermsindex = [0, 1, 2];
   bool isBtnEnable = false;
@@ -34,7 +34,7 @@ class _TermsPageState extends State<TermsPage> {
     setState(() {
       isAllChecked = value ?? false;
       isCheckedTermId =
-          List.generate(TermList.length, (index) => value ?? false);
+          List.generate(termList.length, (index) => value ?? false);
       requiredTermsChecked();
     });
   }
@@ -50,7 +50,7 @@ class _TermsPageState extends State<TermsPage> {
 
   termTitle(int index) {
     return (requiredTermsindex.contains(index) ? "[필수] " : "[선택] ") +
-        TermList[index];
+        termList[index];
   }
 
   handlePageChangeLogin() {
@@ -156,14 +156,14 @@ class _TermsPageState extends State<TermsPage> {
                                 color: CustomColors.lightPinkColor,
                               ),
                               ...List.generate(
-                                TermList.length,
+                                termList.length,
                                 (index) => CheckboxAndTerms(
                                   title: termTitle(index),
                                   isChecked: isCheckedTermId[index],
                                   onChanged: ((value) =>
                                       onCheckboxChanged(index, value)),
                                   onIconTap: () {
-                                    print(TermList[index]);
+                                    print(termList[index]);
                                   },
                                 ),
                               )

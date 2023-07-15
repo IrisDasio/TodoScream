@@ -4,8 +4,8 @@ import 'package:flutter_application_todo_scream/common/components/custom_elevate
 import 'package:flutter_application_todo_scream/common/components/loging_signup_text_form_field.dart';
 import 'package:flutter_application_todo_scream/common/components/page_change_button.dart';
 import 'package:flutter_application_todo_scream/constants/custom_colors.dart';
+import 'package:flutter_application_todo_scream/pages/home_page/home_view.dart';
 import 'package:flutter_application_todo_scream/pages/sign_up_page/sign_up_view.dart';
-import 'package:flutter_application_todo_scream/pages/splash/splash_view.dart';
 
 import '../../constants/assets.dart';
 
@@ -48,10 +48,10 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  handlePageChangeSplash() {
+  handlePageChangeHome() {
     navigateToPage(
       context,
-      const Splash(),
+      const HomePage(),
     );
   }
 
@@ -91,7 +91,8 @@ class _LoginPageState extends State<LoginPage> {
                             onChanged: handleCheckPasswordChange,
                           ),
                           CustomElevatedButton(
-                            onPressed: isBtnEnable ? () {} : null,
+                            onPressed:
+                                isBtnEnable ? handlePageChangeHome : null,
                             text: "로그인",
                           )
                         ],
